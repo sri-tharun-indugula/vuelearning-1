@@ -49,7 +49,7 @@ function showwork(){
 <template>
     <input type="text" v-model="inputdata">
     <button @click="addtodos">add</button>
-    <div v-for="todos of todoList">
+    <div v-for="todos of todoList" :key="todos.id" >
         <input type="checkbox" v-model="todos.done">
             <li :class="{ crossed:todos.done }"><span>{{todos.id}}</span>{{ todos.todo }}</li>
             <button @click="edittodo(todos.id)">edit</button>
